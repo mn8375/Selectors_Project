@@ -1,0 +1,40 @@
+<input type="text" class="form-control" id="job-title" placeholder="Enter your job title">
+#Creati un selector Xpath absolut pentru elementul job title
+/html/body/div/form/div/div[3]/input
+#Tema . Creati un path absolut pentru Check box 3
+<input type="checkbox" id="checkbox-3" aria-label="checkbox" value="checkbox-3">
+
+#Selctori Xpath relativi :
+
+#1.Vom crea un Xpath relativ care ne va duce la primul input din formular.
+//input
+
+#2.Vom crea un Xpath relativ care ne va duce la primul input de tip text
+<input type="text" class="form-control" id="first-name" placeholder="Enter first name">
+//input[@type="text"]
+
+#3.Vom crea un Xpath relativ care ne va duce la primul input de tip job title
+id="job-title"
+//input[@type="text" and @id="job-title"]
+
+#4.Vom crea un Xpath relativ pentru primul element cu Id check box1, indiferent de tag-urile in care se afla.
+//*[@id="checkbox-1"]
+#5.Vom naviga folosind un Xpath relativ din parinte in copil,
+#vom incepe intr-un div si vom identifica un element cu tag-ul label.
+//div/strong/label
+
+#6. Vom construi un selector Xpath relativ cu navigare din copil in parinte,
+#copilul are Id-ul first name si are un tag name care se numeste input
+//input[@id="first-name"]
+//input[@id="first-name"]//parent::div
+
+#7. Vom construi un selector XPath cu navigare dintr-un tag name spre un frate anterior
+//input[@id="first-name"]//preceding-sibling::strong
+
+#8. Vom construi un selector Xpath cu navigare dintr un tag name spre fratele lui ulterior
+//div[@class='input-group']
+//div[@class='input-group']//following-sibling::div
+
+#9. Vom verifica existenta unui camp cu tag label si sa confirmam faptul ca acesta este egal cu first name
+#(Vom folosi un Css selector cu navigare din parinte in copil)
+strong > label
